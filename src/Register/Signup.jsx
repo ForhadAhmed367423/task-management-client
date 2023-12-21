@@ -1,20 +1,20 @@
 import { useContext, useEffect } from "react";
 // import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { AuthContext } from "../../providers/AuthProviders";
-import Swal from "sweetalert2";
+
+// import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import SocialLog from "../Shared/Social/SocialLog";
-import useAxiosPublic from "../../useAxiosPublic ";
+import { AuthContext } from "../providers/AuthProviders";
+// import useAxiosPublic from "../../useAxiosPublic ";
 
 
 
 const SignUp = () => {
-  const axiosPublic = useAxiosPublic();
+  // const axiosPublic = useAxiosPublic();
   const {
     register,
     handleSubmit,
-    reset,
+    // reset,
     formState: { errors },
   } = useForm();
 
@@ -34,19 +34,19 @@ const SignUp = () => {
               name: data.name,
               email: data.email
             }
-            axiosPublic.post('/user', userInfo)
-              .then(res => {
-                if (res.data.insertedId) {
-                  reset();
-                  Swal.fire({
-                    position: "top-end",
-                    icon: "success",
-                    title: "User created successfully",
-                    showConfirmButton: false,
-                    timer: 1000
-                  });
-                }
-              })
+            // axiosPublic.post('/user', userInfo)
+            //   .then(res => {
+            //     if (res.data.insertedId) {
+            //       reset();
+            //       Swal.fire({
+            //         position: "top-end",
+            //         icon: "success",
+            //         title: "User created successfully",
+            //         showConfirmButton: false,
+            //         timer: 1000
+            //       });
+            //     }
+            //   })
               navigate('/');
 
           })
@@ -60,7 +60,7 @@ const SignUp = () => {
   }
 
   useEffect(() => {
-    document.title= "T.B.P| Sign Up";
+    document.title= "Task Zone | Sign Up";
   }, []);
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -129,7 +129,7 @@ const SignUp = () => {
           </form>
           <div className="divider mt-1 h-0 ">OR</div>
           <div className="form-control ">
-            <SocialLog />
+            {/* <SocialLog /> */}
           </div>
         </div>
       </div>

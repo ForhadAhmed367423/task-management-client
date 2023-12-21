@@ -34,6 +34,7 @@ const Login = () => {
 
         })
     }
+  
 
    
     useEffect(() => {
@@ -74,7 +75,7 @@ const Login = () => {
         {/* <SocialLog/> */}
         <label className="flex items-center justify-center gap-2 my-4">
             <a href="#" className="label-text-alt link link-hover font text-base ">Forgot password?</a>
-            <p className="font">New here? <Link to={'/signup'}>SingUp</Link></p>
+            <p className="font">New here? <Link to={'/register'}>SingUp</Link></p>
           </label>
         </div>
     </div>
