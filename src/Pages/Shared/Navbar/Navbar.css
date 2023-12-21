@@ -1,0 +1,23 @@
+.login {
+    background-color: #5C8374;
+    padding: 8px;
+    color: white;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.login:hover {
+    background: #1B4242;
+}
+.active{
+    background-color: #5C8374 !important;
+    color: white !important;
+    font-weight: 500 !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+}
+.logo{
+    width: 250px;
+    height: 70px;
+}
+
