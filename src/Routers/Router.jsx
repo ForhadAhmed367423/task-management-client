@@ -3,6 +3,10 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home/Home";
 import Login from "../Pages/Login/Login";
 import SignUp from "../Register/Signup";
+import Contact from "../Pages/Contact/Contact";
+import About from "../Pages/About/About";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Profile from "../Pages/Dashboard/DashComp/Profile";
 
 const router = createBrowserRouter([
     {
@@ -20,9 +24,32 @@ const router = createBrowserRouter([
         {
             path:'/register',
             element:<SignUp/>
-        }
-      ]
+        },
+        {
+          path:'/contact',
+          element:<Contact/>
+        },
+        {
+          path:'/about',
+          element:<About/>
+        },
+        
+      ],
+      
     },
+    {
+      path: '/dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'profile',
+          element: <Profile/>
+        },
+        
+       
+  
+      ]
+    }
   ]);
 
   export default router;

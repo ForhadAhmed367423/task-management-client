@@ -1,9 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
+import { AuthContext, auth } from "../../../providers/AuthProviders";
+import { useContext } from "react";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut(auth);
+  }
     const links = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
-        <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
+        <li><NavLink to={'/dashboard/profile'}>Dashboard</NavLink></li>
         <li><NavLink to={'/contact'}>Contact</NavLink></li>
         <li><NavLink to={'/about'}>About</NavLink></li>
     </>
@@ -30,8 +36,34 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="login" to={'/login'}>Login/SignUp</Link>
-            </div>
+                   
+                   {
+                       user ? <>
+                       <img src={user?.photoURL} className="hover:border-2 hover:border-[#BC8664] cursor-pointer  h-[50px] w-[50px] rounded-full mr-4 max-[425px]:w-[30px] max-[425px]:h-[30px]" alt="" />
+                       <p className="font lg:font-bold max-[425px]:text-base  lg:mr-3 max-[425px]:hidden">{user?.displayName}</p>
+                       <button onClick={handleLogOut} className="login max-[425px]:hidden" >logout</button>
+                       </> :
+                       <>
+                <div className="navbar-end">
+                   
+                    {
+                        user ? <>
+                        <img src={user?.photoURL} className="hover:border-2 hover:border-[#BC8664] cursor-pointer  h-[50px] w-[50px] rounded-full mr-4 max-[425px]:w-[30px] max-[425px]:h-[30px]" alt="" />
+                        <p className="font lg:font-bold max-[425px]:text-base  lg:mr-3 max-[425px]:hidden">{user?.displayName}</p>
+                        <button onClick={handleLogOut} className="mr-6 primaryBtn font max-[425px]:hidden" >logout</button>
+                        </> :
+                        <>
+                        <Link className="login" to={'/login'}>Login/SignUp</Link>
+                        </>
+                        
+                     }
+                    
+                </div>
+                       </>
+                       
+                    }
+                   
+               </div>
         </div>
     );
 };
