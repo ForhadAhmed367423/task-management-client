@@ -7,6 +7,7 @@ import Contact from "../Pages/Contact/Contact";
 import About from "../Pages/About/About";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Profile from "../Pages/Dashboard/DashComp/Profile";
+import Create from "../Pages/Dashboard/DashComp/Create";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
           path: 'profile',
           element: <Profile/>
         },
+        {
+          path:'create',
+          element:<Create/>
+        }
         
        
   

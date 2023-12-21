@@ -37,7 +37,7 @@ const Drawe = () => {
                             <li className="bg-[#FFFFFF] p-2 hover:bg-slate-200 rounded-lg mb-3 font font-semibold"><Link to={'property'} className="flex items-center gap-2"><GiFinishLine /><span>My Completed Task</span></Link></li>
                             <li className="bg-[#FFFFFF] p-2 hover:bg-slate-200 rounded-lg mb-3 font font-semibold"><Link to={'reviews'} className="flex items-center gap-2"><FaPersonRunning /><span>My ongoing Task</span></Link></li>
                             <li className="bg-[#FFFFFF] p-2 hover:bg-slate-200 rounded-lg mb-3 font font-semibold"><Link to={'reviews'} className="flex items-center gap-2"><MdOutlineRateReview /><span>Task Management</span></Link></li>
-                            <li className="bg-[#FFFFFF] p-2 hover:bg-slate-200 rounded-lg mb-3 font font-semibold"><Link to={'reviews'} className="flex items-center gap-2"><MdCreateNewFolder /><span>Create Task</span></Link></li>
+                            <li className="bg-[#FFFFFF] p-2 hover:bg-slate-200 rounded-lg mb-3 font font-semibold"><Link to={'create'} className="flex items-center gap-2"><MdCreateNewFolder /><span>Create Task</span></Link></li>
                         </>
 
 
