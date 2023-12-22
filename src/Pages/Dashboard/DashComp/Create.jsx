@@ -1,14 +1,20 @@
+import { useContext } from "react";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../../providers/AuthProviders";
 
 const Create = () => {
+    
+    const { user } = useContext(AuthContext);
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        
         const form = event.target;
         console.log(form);
         const task = form.task.value;
-
-        const taskData = { task };
+        const title = form.title.value;
+        const email = user.email;
+        
+        const taskData = { task , email,status:'todo',title};
         console.log(taskData);
 
         fetch("http://localhost:5000/tasks", {
@@ -53,6 +59,13 @@ const Create = () => {
                                 placeholder="Add Your Task"
                                 type="text"
                                 name="task"
+                            />
+                            <input
+                                className="rounded-[10px] w-[500px]
+                                py-[16px] px-[16px] border-2 bg-[transparent] border-[#000] text-[#000] outline-none"
+                                placeholder="Add Your Title"
+                                type="text"
+                                name="title"
                             />
 
 

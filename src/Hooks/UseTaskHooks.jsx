@@ -7,9 +7,9 @@ const UseTaskHooks = () => {
     const axiosSecure = useAxiosSecure();
     const {user} = useContext(AuthContext)
     const { refetch, data: offerData = [] } = useQuery({
-        queryKey: ['tasks', user?.email],
+        queryKey: ['tasklist', user?.email],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/tasks?email=${user?.email}`)
+            const res = await axiosSecure.get(`/tasklist?email=${user?.email}`)
             return res.data;
         }
     })

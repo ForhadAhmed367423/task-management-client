@@ -8,6 +8,11 @@ import About from "../Pages/About/About";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import Profile from "../Pages/Dashboard/DashComp/Profile";
 import Create from "../Pages/Dashboard/DashComp/Create";
+import MyTODO from "../Pages/Dashboard/DashComp/MyTODO";
+import TODOUpdate from "../Pages/Dashboard/DashComp/TODOUpdate";
+import TaskManage from "../Pages/Dashboard/DashComp/TaskManage/TaskManage";
+import MyOnGoing from "../Pages/Dashboard/MyOnGoing";
+import MyCompleted from "../Pages/Dashboard/MyCompleted";
 
 const router = createBrowserRouter([
     {
@@ -49,6 +54,26 @@ const router = createBrowserRouter([
         {
           path:'create',
           element:<Create/>
+        },
+        {
+          path:'mytodo',
+          element:<MyTODO/>
+        },
+        {
+          path:'mytodo/todoEdit/:id',
+          element:<TODOUpdate/>
+        },
+        {
+          path:'taskmanage',
+          element:<TaskManage/>
+        },
+        {
+          path:'myongoing',
+          element:<MyOnGoing/>
+        },
+        {
+          path:'completed',
+          element:<MyCompleted/>
         }
         
        
