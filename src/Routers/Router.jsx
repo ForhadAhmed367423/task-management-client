@@ -13,6 +13,7 @@ import TODOUpdate from "../Pages/Dashboard/DashComp/TODOUpdate";
 import TaskManage from "../Pages/Dashboard/DashComp/TaskManage/TaskManage";
 import MyOnGoing from "../Pages/Dashboard/MyOnGoing";
 import MyCompleted from "../Pages/Dashboard/MyCompleted";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
     },
     {
       path: '/dashboard',
-      element: <Dashboard></Dashboard>,
+      element: <PrivetRoutes><Dashboard></Dashboard></PrivetRoutes>,
       children: [
         {
           path: 'profile',
