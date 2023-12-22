@@ -8,6 +8,7 @@ const MyCompletedCard = ({completed}) => {
                     <p>{completed.task}</p>
                 </>
             }
+     
         </div>
     );
 };

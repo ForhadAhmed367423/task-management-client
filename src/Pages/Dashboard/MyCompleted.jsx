@@ -17,6 +17,7 @@ const MyCompleted = () => {
     })
     return (
         <div className="w-3/4 my-7 ml-[350px]">
+            <h1 className="text-center font-bold text-4xl mb-8">My Completed Task</h1>
             <div className="grid  grid-cols-1 gap-4 lg:grid-cols-3">
             {
                 data?.map(comp => <MyCompletedCard key={comp._id} completed={comp} ></MyCompletedCard>)

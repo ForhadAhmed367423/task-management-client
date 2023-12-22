@@ -1,25 +1,28 @@
-import { Link } from "react-router-dom";
-import UseTaskHooks from "../../../Hooks/UseTaskHooks";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/AuthProviders";
+import useAxiosPublic from "../../../useAxiosPublic ";
+import { useQuery } from "@tanstack/react-query";
+import MyTODOCard from "./MyTODOCard";
 
 const MyTODO = () => {
-
-    const [tasks] = UseTaskHooks();
+    const {user}= useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
+    const  {data}= useQuery({
+        queryKey:['alltodo'],
+        queryFn:async ()=>{
+            const {data:alltodo}=await axiosPublic(`/alltodo?email=${user.email}`)
+            return alltodo;
+        }
+    
+    })
     return (
-        <div className="ml-[400px] ">
+        <div className="w-3/4 my-7 ml-[350px]">
             <h1 className="text-center text-4xl font-bold mt-5">My TODO List</h1>
             <div className=" mx-auto ">
                 <div className="flex justify-center">
-                    <div className="grid grid-cols-3 mt-10">
+                    <div className="grid grid-cols-3 mt-10 gap-20">
                         {
-                            tasks.map(task => <div className="mr-10 bg-slate-200  rounded-lg p-5 w-[250px]" key={task._id}>
-                                <h3>{task.task}</h3>
-                                <div>
-                                    <Link to={`todoEdit/${task._id}`}>
-                                        <button className="btn btn-xs">Update</button>
-                                    </Link>
-
-                                </div>
-                            </div>)
+                            data?.map(todo =><MyTODOCard key={todo._id} todo={todo}></MyTODOCard>)
                         }
 
                     </div>
