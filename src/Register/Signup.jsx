@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 // import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProviders";
+import SocialLog from "../Pages/Shared/Social/SocialLog";
 // import useAxiosPublic from "../../useAxiosPublic ";
 
 
@@ -129,7 +130,7 @@ const SignUp = () => {
           </form>
           <div className="divider mt-1 h-0 ">OR</div>
           <div className="form-control ">
-            {/* <SocialLog /> */}
+            <SocialLog/>
           </div>
         </div>
       </div>

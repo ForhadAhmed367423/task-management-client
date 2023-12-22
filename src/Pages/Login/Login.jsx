@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProviders";
+import SocialLog from "../Shared/Social/SocialLog";
 
 const Login = () => {
     const navigate= useNavigate();
@@ -73,6 +74,7 @@ const Login = () => {
 
       <div className="form-control ">
         {/* <SocialLog/> */}
+        <SocialLog/>
         <label className="flex items-center justify-center gap-2 my-4">
             <a href="#" className="label-text-alt link link-hover font text-base ">Forgot password?</a>
             <p className="font">New here? <Link to={'/register'}>SingUp</Link></p>

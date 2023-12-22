@@ -16,7 +16,7 @@ import { FaPersonRunning } from "react-icons/fa6";
 const Drawe = () => {
     return (
         <div className="fixed">
-            <div className="drawer drawer-open lg:w-[300px] min-h-screen ">
+            <div className="drawer drawer-open lg:w-[300px] w-[150px] min-h-screen ">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
 

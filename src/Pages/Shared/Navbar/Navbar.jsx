@@ -26,7 +26,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                 <img className="logo"  src="/public/tasskweb-removebg-preview.png" alt="" /> 
+                 <img className="logo"  src="https://i.ibb.co/2j27yCx/tasskweb-removebg-preview.png" alt="" /> 
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
